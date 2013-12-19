@@ -1,0 +1,11 @@
+{
+    "remote": "https://nil.zenozeng.com/auth",
+    "users": {
+        "zenozeng": {
+            "key": "This's password for zenozeng"
+        },
+        "richard": {
+            "key": "This's password for richard"
+        }
+    }
+}

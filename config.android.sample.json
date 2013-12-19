@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Zeno Zeng's Box Auth",
+        "romote": "https://nil.zenozeng.com/auth",
+        "username": "zenozeng",
+        "key": "This's password for zenozeng"
+    },
+    {
+        "name": "Zeno Zeng's Box Auth 2",
+        "romote": "https://nil2.zenozeng.com/auth",
+        "username": "zenozeng",
+        "key": "This's password for zenozeng"
+    }
+]
