@@ -10,7 +10,10 @@
     "keywords": ["qr", "qrcode", "auth", "qr-auth"],
     "main": "./qr.js",
     "dependencies": {
-        "qr": ">= 0.2.3"
+        "yaqrcode": ">=0.0.2",
+        "node-uuid": "latest",
+        "cookie": "latest",
+        "speakeasy": ">=1.0.3"
     },
     "repository": {
         "type": "git",

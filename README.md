@@ -2,21 +2,9 @@
 
 QR Code Based 2-Step Authentication
 
-## Installation
+## Android
 
-Note: Node-qr requires qrencode.
-
-- Mac OS X
-
-    port install qrencode
-
-- Ubuntu / Debian
-
-    apt-get install qrencode
-    
-- Others
-
-    http://fukuchi.org/works/qrencode/index.en.html
+https://github.com/richard1122/QR-auth-android
 
 ## License
 
