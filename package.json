@@ -12,8 +12,9 @@
     "dependencies": {
         "yaqrcode": ">=0.0.2",
         "node-uuid": "latest",
-        "cookie": "latest",
-        "speakeasy": ">=1.0.3"
+        "speakeasy": ">=1.0.3",
+        "cookies": ">=0.3.8",
+        "socket.io": ">=0.9.16"
     },
     "repository": {
         "type": "git",
