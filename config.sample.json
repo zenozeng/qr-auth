@@ -1,0 +1,14 @@
+{
+    "remote": "http://dog.zenozeng.com:10000",
+    "users": {
+        "username": {
+            "key": "This's private key for `username`"
+        },
+        "zenozeng": {
+            "key": "b84a2a85a90d7ad15537f2b0577d4442b84a2a85a90d7ad15537f2b0577d4442b84a2a85a90d7ad15537f2b0577d4442"
+        },
+        "richard": {
+            "key": "de2e3b1086cc2ad4fde892c7d82bbf5dde2e3b1086cc2ad4fde892c7d82bbf5d"
+        }
+    }
+}
