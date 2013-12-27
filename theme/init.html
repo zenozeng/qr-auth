@@ -1,0 +1,65 @@
+<!doctype HTML>
+<head>
+    <meta charset="UTF-8">
+    <style>
+     body {
+         padding-top: 2em;
+     }
+     h1 {
+        color: #ccc;
+        margin: 10px 20px;
+        font-size: 48px;
+     }
+     input, textarea {
+         border: 1px solid #777;
+         padding: 1em;
+         width: 80%;
+         margin: 10px 20px;
+     }
+     textarea {
+         height: 200px;
+     }
+     .button {
+         border: 1px solid #777;
+         margin: 5px 20px;
+         padding: 1em;
+         color: #555;
+         background: #fff;
+         width: 160px;
+         cursor: pointer;
+         font-size: 12px;
+         text-align: left;
+     }
+     .button:hover {
+         background: #eee;
+     }
+     #submit {
+        display: block;
+     }
+    </style>
+</head>
+<body>
+    <h1>Init Your Config</h1>
+    <form action="" method="POST">
+        <input type="text" id="remote" name="remote">
+        <input type="text" id="username" placeholder="User Name" name="username">
+        <textarea id="key" placeholder="Key" name="key"></textarea>
+        <br>
+        <button class="button" id="generate">Generate a key</button>
+        <input type="submit" class="button" id="submit">
+    </form>
+    <script>
+     var $ = function(id) {
+         return document.getElementById(id);
+     }
+     $('remote').value = window.location.href;
+     $('generate').onclick = function(e) {
+         var key = '';
+         for(var i = 0; i < 1024; i++) {
+             key += parseInt(Math.random()*16).toString(16)
+         }
+         $('key').value = key;
+         e.preventDefault();
+     }
+    </script>
+</body>
