@@ -6,6 +6,14 @@ QR Code Based 2-Step Authentication
 
 https://github.com/richard1122/QR-auth-android
 
+## API
+
+### Auth using phone
+
+```
+POST http://example.com {username: "username", hash: "hash", sid: "session id"}
+```
+
 ## License
 
 Licensed under the MIT License.
