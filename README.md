@@ -13,6 +13,12 @@ https://github.com/richard1122/QR-auth-android
 ```
 POST http://example.com {username: "username", hash: "hash", sid: "session id"}
 ```
+```
+success: {status: "success"}
+```
+```
+error: {status: "error", error: "hash not match"}
+```
 
 ## License
 
