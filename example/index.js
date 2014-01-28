@@ -1,4 +1,4 @@
-var qrAuth = require('../index.js'),
+var qrAuth = require('../index.js').auth,
     connect = require('connect'),
     http = require('http');
 

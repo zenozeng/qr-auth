@@ -1,7 +1,7 @@
 {
     "name": "qr-auth",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": {
         "name": "Zeno Zeng",
         "email": "zenoofzeng@gmail.com"
@@ -11,10 +11,7 @@
     "main": "./qr.js",
     "dependencies": {
         "yaqrcode": ">=0.0.2",
-        "node-uuid": "latest",
-        "speakeasy": ">=1.0.3",
-        "cookies": ">=0.3.8",
-        "socket.io": ">=0.9.16"
+        "better-require": ">=0.0.3"
     },
     "repository": {
         "type": "git",
