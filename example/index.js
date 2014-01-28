@@ -2,6 +2,13 @@ var qrAuth = require('../index.js').auth,
     connect = require('connect'),
     http = require('http');
 
+var keygen = function(username, callback) {
+    var keys = {
+        zenozeng: "private key"
+    }
+    callback(keys[username]);
+}
+
 var app = connect()
           .use(connect.cookieParser()) // required by session
           // When the user closes the browser the cookie (and session) will be removed.
@@ -10,7 +17,7 @@ var app = connect()
           // parse body content
           .use(connect.urlencoded())
           .use(connect.json())
-          .use(qrAuth({exclude: null, maxAge: 60*1000}))
+          .use(qrAuth({keygen: keygen}))
           .use(function(req, res) {
               res.end('Hello World!\n');
           });

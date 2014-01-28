@@ -5,8 +5,7 @@ yaqrcode = require 'yaqrcode'
 
 module.exports = (options) ->
   {exclude, maxAge, keygen, template} = options
-  # keygen should be a function which take username as arg
-  # keygen = (username, callback) -> callback(key)
+  maxAge = 60*1000 unless maxAge?
   unless template?
     template = fs.readFileSync "../template.html", {encoding: 'UTF-8'}
 
@@ -22,7 +21,6 @@ module.exports = (options) ->
         next()
       else
         res.writeHead 200, {'Content-Type': 'text/html'}
-
         if req.headers["X-Forwarded-Protocol"] && req.headers["X-Forwarded-Protocol"] is 'https'
           protocol = 'https'
         else
@@ -33,4 +31,3 @@ module.exports = (options) ->
         json = JSON.stringify(json)
         res.write template.replace(new RegExp('{{qrcode}}', 'g'), yaqrcode(json));
         res.end()
-

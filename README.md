@@ -10,9 +10,31 @@ May be available in few days.
 
 ### Options
 
-#### template
+#### exclude (optional)
+
+An array of request.url, will pass directly when match.
+
+#### maxAge (optional)
+
+Max age for user logged in. Default is 60*1000
+
+#### keygen
+
+A function taking username as arg and callback a key
+
+```
+var keygen = function(username, callback) {
+    // get key somewhere
+    key = keys[username];
+    callback(key);
+}
+```
+
+#### template (optional)
 
 A html String, and its substring `{{qrcode}}` will be replaced the base64 qrcode.
+
+See template.html for example.
 
 ## Android
 
