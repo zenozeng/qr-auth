@@ -2,10 +2,6 @@
 
 QR Code Based 2-Step Authentication
 
-## Status
-
-May be available in few days.
-
 ## Usage
 
 ### Options
