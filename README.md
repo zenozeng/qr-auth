@@ -6,6 +6,14 @@ QR Code Based 2-Step Authentication
 
 May be available in few days.
 
+## Usage
+
+### Options
+
+#### template
+
+A html String, and its substring `{{qrcode}}` will be replaced the base64 qrcode.
+
 ## Android
 
 https://github.com/richard1122/QR-auth-android

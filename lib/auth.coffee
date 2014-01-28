@@ -4,9 +4,12 @@ apiHandle = require './auth-api.js'
 yaqrcode = require 'yaqrcode'
 
 module.exports = (options) ->
-  {exclude, maxAge, keygen} = options
+  {exclude, maxAge, keygen, template} = options
   # keygen should be a function which take username as arg
   # keygen = (username, callback) -> callback(key)
+  unless template?
+    template = fs.readFileSync "../template.html", {encoding: 'UTF-8'}
+
   (req, res, next) ->
     if exclude? and exclude.indexOf(req.url) > -1
       next()
@@ -19,12 +22,15 @@ module.exports = (options) ->
         next()
       else
         res.writeHead 200, {'Content-Type': 'text/html'}
-        fs.readFile "template.html", {encoding: 'UTF-8'}, (err, html) ->
-          json =
-            sid: sid
-            remote: req.protocol + "://" + req.get('host') + req.url
-          json = JSON.stringify(json)
-          html = html.replace(new RegExp('{{qrcode}}', 'g'), yaqrcode(json));
-          res.write html
-          res.end()
+
+        if req.headers["X-Forwarded-Protocol"] && req.headers["X-Forwarded-Protocol"] is 'https'
+          protocol = 'https'
+        else
+          protocol = 'http'
+        json =
+          sid: sid
+          remote: protocol + "://" + req.headers.host + req.url
+        json = JSON.stringify(json)
+        res.write template.replace(new RegExp('{{qrcode}}', 'g'), yaqrcode(json));
+        res.end()
 
