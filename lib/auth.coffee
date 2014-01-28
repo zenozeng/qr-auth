@@ -1,6 +1,6 @@
 fs = require 'fs'
-lm = require 'lib/login-manager.js'
-apiHandle = require 'lib/auth-api.js'
+lm = require './login-manager.js'
+apiHandle = require './auth-api.js'
 yaqrcode = require 'yaqrcode'
 
 module.exports = (options) ->
