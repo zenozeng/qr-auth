@@ -1,8 +1,9 @@
+crypto = require 'crypto'
 lm = require './login-manager.js'
 
 module.exports = (req, res, keygen) ->
   res.writeHead 200, {'Content-Type': 'text/html'}
-  {username, hash, sid, action} = req.body
+  {username, hash, sid} = req.body
   if hash? # login from api
     timestamp = parseInt((new Date().getTime()) / 1000 / 30)
     keygen username, (key) ->
